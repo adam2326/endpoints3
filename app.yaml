@@ -1,0 +1,14 @@
+application: machine-learning-backend
+version: aplha001
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /_ah_spi/.*
+  script: main.app
+  secure: always
+
+libraries:
+- name: endpoints
+  version: 1.0
