@@ -17,7 +17,7 @@ class statistical_tests(remote.Service):
     """statistical test API v1"""
 
     @endpoints.method(message_types.VoidMessage, text_response_only, path = "ttest", http_method='GET', name = "ttest")
-    def my_ttest(self, request):
+    def my_ttest():
         return text_response_only(resp="hello ttester")
 
 app = endpoints.api_server([statistical_tests])
