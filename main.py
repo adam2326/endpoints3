@@ -5,19 +5,17 @@ from protorpc import remote
 
 
 # create different kinds of responses
-class text_response_only(messages.Message):
+class textresponseonly(messages.Message):
     """String that stores a message."""
     resp = messages.StringField(1)
 
-
-
 # Create the API endpoints
-@endpoints.api(name='statistical_tests', version='v1')
-class statistical_tests(remote.Service):
+@endpoints.api(name='statisticaltests', version='v1')
+class statistics(remote.Service):
     """statistical test API v1"""
 
-    @endpoints.method(message_types.VoidMessage, text_response_only, path = "ttest", http_method='GET', name = "ttest")
-    def my_ttest():
-        return text_response_only(resp="hello ttester")
+    @endpoints.method(message_types.VoidMessage, textresponseonly, path = "ttest", http_method='GET', name = "ttest")
+    def myttest(self, request):
+        return textresponseonly(resp="hello ttester")
 
-app = endpoints.api_server([statistical_tests])
+app = endpoints.api_server([statistics])
