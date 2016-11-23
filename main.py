@@ -18,6 +18,6 @@ class statistical_tests(remote.Service):
 
     @endpoints.method(message_types.VoidMessage, text_response_only, path = "ttest", http_method='GET', name = "ttest")
     def my_ttest(self, request):
-      return text_response_only(resp="hello ttester")
+        return text_response_only(resp="hello ttester")
 
 app = endpoints.api_server([statistical_tests])
